@@ -8,9 +8,8 @@ import {
     DeleteDateColumn 
 } from "typeorm";
 
-@Entity()
+@Entity('user')
 export class UserEntity {
-
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -34,4 +33,7 @@ export class UserEntity {
 
     @Column()
     phone: string;
+
+    @Column({ default: false })
+    hasAccess: boolean;
 }

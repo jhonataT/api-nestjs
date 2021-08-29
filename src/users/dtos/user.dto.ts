@@ -14,4 +14,7 @@ export class UserDto {
 
     @ApiProperty()
     phone: string;
+
+    @ApiProperty()
+    hasAccess: boolean;
 }
