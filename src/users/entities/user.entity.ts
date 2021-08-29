@@ -3,9 +3,6 @@ import {
     Column,
     Entity,
     PrimaryGeneratedColumn,
-    CreateDateColumn,
-    UpdateDateColumn,
-    DeleteDateColumn 
 } from "typeorm";
 
 @Entity('user')
@@ -18,15 +15,6 @@ export class UserEntity {
 
     @Column()
     email: string;
-
-    @CreateDateColumn({ name: 'createdAt', type: 'datetime' })
-    createdAt: Date;
-
-    @UpdateDateColumn({ name: 'updatedAt', type: 'datetime' })
-    updatedAt: Date;
-
-    @DeleteDateColumn({ name: 'deletedAt', type: 'datetime' })
-    deletedAt: Date;
 
     @Column()
     hour: string;

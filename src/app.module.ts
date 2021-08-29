@@ -1,22 +1,14 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserEntity } from './users/entities/user.entity';
+import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
     UsersModule,
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'whatsappBotDb',
-      entities: [
-        UserEntity
-      ],
-      synchronize: true
-    })
+    DatabaseModule
   ],
   controllers: [AppController],
   providers: [AppService],
